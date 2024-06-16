@@ -61,6 +61,7 @@ export class ProductDetailPageComponent implements OnInit {
     this.selectedProductDetails['isAdded']=true;
     this.selectedProductDetails['quantity']=this.prodQuantity;
     
+    
     console.log(data);
     this.productDataShare.storeProduct(this.selectedProductDetails);  
 
@@ -80,7 +81,6 @@ export class ProductDetailPageComponent implements OnInit {
         }
       }
         if (!exists) {
-          // data['isAdded']=true;
           data['quantity']=this.prodQuantity;
           data['totalAmount'] = data.price * this.prodQuantity;
         this.cartData.User_Cart_Data.push(data);

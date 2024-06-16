@@ -47,12 +47,12 @@ export class CartComponent {
 removeItem(data:any,i:any){
   for (let i = 0; i < this.cartData.User_Cart_Data.length; i++) {
     const element = this.cartData.User_Cart_Data[i];
-    if (element.id=data.id) {
-      this.cartData.User_Cart_Data.splice(0,1);
-      this.cartData.storeUserCartData(this.cartData.User_Cart_Data);
+    if (data.id==element.id) {
+      this.cartData.User_Cart_Data.splice(i,1);
       this.calculateAmount();
+      this.cartData.storeUserCartData(this.cartData.User_Cart_Data);
       return;
-    }      
+    }   
   }
 
 }
