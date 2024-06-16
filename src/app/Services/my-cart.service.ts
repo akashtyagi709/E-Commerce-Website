@@ -7,7 +7,7 @@ export class MyCartService {
 
 
   User_Cart_Data:any=[];
-  TotalAmount:any;
+  TotalAmount:any='';
   UseremailId:any;
 
   constructor() { }
