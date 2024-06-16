@@ -28,3 +28,5 @@ This project is an e-commerce website built using Angular, which fetches data fr
 3. npm install @fortawesome/fontawesome-free
 
 4. npm install @fortawesome/fontawesome
+
+5. --> Make Sure your internet connection is good as the data is comming from an external API
