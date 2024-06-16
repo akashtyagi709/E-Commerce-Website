@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 card shadow rounded mt-4">
+            <div class="row mt-4 mb-4">
+                <div class="col-12 col-md-6 text-center  ">            
+                    <img [src]="selectedProductDetails.image" class="productImg mb-4 mt-4" alt="image_not_found">
+                </div>
+                <div class="col-12 col-md-6 ">
+                    <h4>{{selectedProductDetails.title}}</h4>
+                    <h3 class="text-warning">₹ {{selectedProductDetails.price}}</h3>
+                    <h6 class="mt-2 ">Review - {{selectedProductDetails.rating?.rate}} <span class="mx-5"> Count - {{selectedProductDetails.rating?.count}}  </span> </h6>   
+                    <small class="mt-3 ">{{selectedProductDetails.description}}</small>
+                    <div class="fw-bold d-flex mt-3">QTY :
+                        <div class="minus mx-3  text-center text-white c-pointer" (click)="quanitiyFunction('minus',prodQuantity)"><i class="fa fa-minus"></i></div> 
+                        {{prodQuantity}}
+                        <div class="minus mx-3  text-center text-white c-pointer" (click)="quanitiyFunction('add',prodQuantity)"><i class="fa fa-plus"></i></div> 
+                    </div>                        
+                    <div *ngIf="isProductAdded==false" class="addToCartbtn btn bg-dark text-white mt-3" (click)="addtoCart(selectedProductDetails)" >
+                        <i class="fa fa-shopping-bag"></i>
+                        Add to Cart
+                    </div>
+
+                    <div *ngIf="isProductAdded==true " class="addToCartbtn btn bg-danger text-white mt-3" (click)="removeFromCart(selectedProductDetails)" >
+                        <i class="fa fa-remove"></i>
+                        Remove
+                    </div>
+
+                    <div class="addToCartbtn btn orderbtn mt-3 mx-3"  (click)="order(selectedProductDetails)"  >
+                        Order
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

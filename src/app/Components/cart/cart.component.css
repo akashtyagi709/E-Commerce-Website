@@ -1,0 +1,19 @@
+.smaller {
+    font-size: small;
+}
+
+.borderline {
+    height: 1px;
+    width: 96%;
+    background-color: rgb(32, 28, 28);
+}
+
+.productImage {
+    height: 120px;
+    width: 120px;
+}
+.addMore{
+    height: 120px;
+    width: 20%;
+    background-color: rgb(212, 210, 210);
+}

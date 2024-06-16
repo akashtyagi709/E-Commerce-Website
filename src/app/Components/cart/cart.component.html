@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 py-3">
+            <h3 class="fw-bold">Your cart</h3>
+            <p class="fw-bold">{{cartData.User_Cart_Data.length}} item ships at checkout</p>
+        </div>        
+    </div>
+    <div class="row">
+        <div class="col-12 mb-4">
+            <div class="row">
+                <div class="col-12 col-md-8">
+                    <div class="row">
+                        <div class="col-12 rounded btn offset-5 mb-2 card text-center addMore p-3 "*ngIf="cartData.User_Cart_Data.length==0" routerLink="">
+                            <i class="fa fa-plus mt-4"></i>
+                            Add More
+                        </div>
+                        <div class="col-12 border card ">
+                            <div class="row  mt-md-1 mt-3" *ngFor="let data of cartData.User_Cart_Data; let i=index">
+                                <div class="col-3 mb-3 mt-2 ">
+                                    <img [src]="data.image" alt="image_not_found" class="productImage " style="object-fit: contain;" >
+                                </div>
+                                <div class="col-8 h6 ">
+                                    <p class="mx-md-0 mx-5"> {{data.title}}</p>
+                                    <p class="mx-md-0 mx-5 h6">Quantity {{data.quantity}}</p>
+                                    <div class="row">
+                                        <div class="col-12 text-end">
+                                            <p class="mx-md-0 mx-5"> <small>₹ </small> {{data.totalAmount}}</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-1 c-pointer">
+                                    <i class="fa fa-close" (click)="removeItem(data,i)"></i>
+                                </div>
+                            <hr *ngIf="cartData.User_Cart_Data.length>i+1 || cartData.User_Cart_Data.length>0">
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 mt-4 mt-md-0">
+                    <div class="row">
+                        <div class="col-12 border card shadow mx-md-3 mx-0" style="background-color: rgb(243, 232, 209);">
+                            <h5 class="mt-2 mb-2 py-3 text-center ">Order Summary</h5>
+                            <div class="row mx-3 mb-3 ">
+                                <div class="col-8 smaller py-1">Subtotal </div> <div class="col-4 d-flex">₹ {{Subtotal}}</div>                                
+                                <div class="col-8 smaller py-1">Shipping Discount </div> <div class="col-4 d-flex">₹ 5.00</div>                                
+                                <div class="col-8 smaller py-1">Shipping & Handeling </div> <div class="col-4 d-flex">₹ 25.00</div>                                
+                                <div class="col-8 smaller py-1">Tax </div> <div class="col-4 d-flex"> ₹ 0.00</div>      
+                                <div class="borderline mx-1 mt-2"></div>
+                                <div class="col-12 text-danger smaller mb-2"><sup>*</sup>Shipping charges are fixed for every order</div>
+                                <div class="col-8  py-1 fw-bold h6"  *ngIf="this.cartData.User_Cart_Data.length!=0"> Total </div> <div class="col-4 d-flex" *ngIf="this.cartData.User_Cart_Data.length!=0"> ₹ {{TotalAmount}}</div>      
+                                <div class="col-8  py-1 fw-bold h6" *ngIf="this.cartData.User_Cart_Data.length==0"> Total </div> <div class="col-4 d-flex"  *ngIf="this.cartData.User_Cart_Data.length==0"> ₹ 0</div>      
+                                <div class="col-12 btn mt-1 bg-dark text-white" (click)="checkout()">Checkout</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

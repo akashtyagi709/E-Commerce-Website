@@ -1,0 +1,14 @@
+<div class="container-fluid " >
+    <div class="row header">
+        <div class="col-md-3 col-sm-3 col-6 my-auto " >
+            <h2 routerLink="">Shop it !.</h2>
+        </div>
+        <div class="col-md-7 col-sm-6 col-1 text-end my-auto">       
+            <span class="badge badge-secondary btn" routerLink="/add-to-cart"><i class="fa fa-shopping-cart me-1" aria-hidden="true" title="Cart" style="color: red;"></i>{{cartData.getNumberOfItems()}}</span>
+        </div>
+        <div class="col-md-2 col-sm-3 col-5  text-center my-auto ">
+            <span class="btn text-white" *ngIf="authservice.isUserLogedIn()==false || authservice.isUserLogedIn()==null" routerLink="/signUp-login"> Login</span>  
+            <span class="btn text-white" *ngIf="authservice.isUserLogedIn()==true"><i class="fa fa-user"></i></span>  
+        </div>
+    </div>
+</div>
